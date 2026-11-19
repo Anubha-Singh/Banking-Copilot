@@ -1,0 +1,6 @@
+{
+  "name": "Engagement Banking Copilot",
+  "description": "Executive fintech banking copilot powered by Gemini function calling, MCP-style tool inspection, and backend domain guardrails.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

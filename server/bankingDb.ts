@@ -1,4 +1,5 @@
 import fs from 'node:fs';
+import os from 'node:os';
 import path from 'node:path';
 import type {
   CustomerProfile,
@@ -14,7 +15,8 @@ export interface CoreBankingStore {
   auditEvents: McpAuditEvent[];
 }
 
-const STATE_FILE_PATH = path.resolve(process.cwd(), '.banking-session-state.json');
+const STATE_DIR = process.env.VERCEL ? os.tmpdir() : process.cwd();
+const STATE_FILE_PATH = path.resolve(STATE_DIR, '.banking-session-state.json');
 
 export function formatINR(amount: number): string {
   return `₹${amount.toLocaleString('en-IN')}`;
